@@ -6,9 +6,10 @@ import (
 )
 
 func init() {
-	http.HandleFunc("/", handle)
+	http.HandleFunc("/upload", upload)
+	http.HandleFunc("/", index)
 }
 
-func handle(w http.ResponseWriter, r *http.Request) {
+func index(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "You have reached: %s\n", r.URL)
 }
